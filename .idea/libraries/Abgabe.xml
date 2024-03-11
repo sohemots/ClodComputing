@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Abgabe">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Abgabe/rentIT-backend-heroku-abgabe.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Abgabe/rentit-frontend.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

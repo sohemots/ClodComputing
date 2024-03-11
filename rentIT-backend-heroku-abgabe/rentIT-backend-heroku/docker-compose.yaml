@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  spring-boot-app:
+    image: docker-rentit2:latest  # Use the image you've already built
+    container_name: rentit_container
+    ports:
+      - "8081:3000"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://sohemots-rds-db.c96k0yusqp38.us-east-1.rds.amazonaws.com:5432/sohemots-rds-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Daniel19980s.
+
+  postonui:
+    image: 'rentit-frontend2'
+    container_name: 'frontend-container'
+    restart: 'always'
+    ports:
+      - "3001:80"
