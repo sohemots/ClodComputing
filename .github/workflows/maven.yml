@@ -10,9 +10,9 @@ name:  Maven Build + Docker build and DockerHub push
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "sohemots-patch-1" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "sohemots-patch-1" ]
 
 jobs:
   build:
