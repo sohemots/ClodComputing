@@ -21,7 +21,7 @@ import com.rentit.project.repositories.CategoryRepository;
 public class CategoryService {
 
 	@Autowired
-	private CategoryRepository categoryRepository;
+	CategoryRepository categoryRepository;
 
 	@Autowired
 	private ArticleService articleService;
