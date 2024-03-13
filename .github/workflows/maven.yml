@@ -39,3 +39,14 @@ jobs:
           docker build -t docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/rentitui:latest .
         env:
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+
+      - name: Push backend image
+        run: |
+            echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password "${{ secrets.DOCKER_HUB_PASSWORD}}" docker.io
+            docker build rentIT-backend-heroku-abgabe/rentIT-backend-heroku/ --file rentIT-backend-heroku-abgabe/rentIT-backend-heroku/Dockerfile --tag docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/sohemots-backend-img:latest
+            docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:latest
+
+      - name: Push frontend image
+        run: |
+              echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password "${{ secrets.DOCKER_HUB_PASSWORD}}" docker.io
+                docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/sohemots-frontend-img:latest
