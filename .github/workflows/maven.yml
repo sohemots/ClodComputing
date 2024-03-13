@@ -37,3 +37,5 @@ jobs:
         run: |
           cd rentit-frontend
           docker build -t docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/rentitui:latest .
+        env:
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
