@@ -52,7 +52,9 @@ jobs:
 #        run: |
 #              echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password "${{ secrets.DOCKER_HUB_PASSWORD}}" docker.io
 #                docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/sohemots-frontend-img:latest
+
       - name: Push frontend image
         run: |
           echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin docker.io
+          docker build rentit-frontend/ --file rentit-frontend/Dockerfile --tag docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/sohemots-frontend-img:latest
           docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/sohemots-frontend-img:latest
