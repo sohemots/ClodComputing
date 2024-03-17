@@ -24,7 +24,7 @@ class CategoryServiceTest {
     private CategoryService categoryService;
     private CategoryRepository categoryRepository;
 
-    @BeforeEach // executer avant chaque test
+    @BeforeEach // executer avant chaque test test
     void setUp() {
         categoryRepository = mock(CategoryRepository.class); //  cree un objet mock de type CategoryRepository
         categoryService = new CategoryService();
